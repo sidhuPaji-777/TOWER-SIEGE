@@ -153,8 +153,9 @@ if(keyCode===32)
     rope.attach(polygon.body);
   }
 
-//   else if(keyCode===83)
-//   {
-//       stand1.setStatic(false)
-//   }
+else if(keyCode===83)
+  {
+      Matter.Body.setStatic(stand1.body, false);
+      Matter.Body.setStatic(stand2.body, false);
+  }
 }
