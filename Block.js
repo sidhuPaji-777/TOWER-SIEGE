@@ -11,20 +11,39 @@ constructor(x, y, width, height) {
     this.width = width;
     this.height = height;
     World.add(world, this.body);
+
+    this.Visibility=255;
   }
 
   display(rung){
+
+    if((this.body.speed)<4)
+    {
     var pos=this.body.position;
     var colour = rung;
+    this.Visibility=this.Visibility-10;
+
     fill(colour);
     stroke("White");
     strokeWeight(0.5);
     rect(pos.x, pos.y, this.width, this.height);
     rectMode(CENTER);
-    // push();
-    // translate(this.body.position.x, this.body.position.y);
-    // pop();
+    push();
+    
+    pop();
+
+  }
+
+  else{
+    
+    World.remove(world,this.body);
+    console.log("done");
+    // this.Visibility=this.Visibility-0;
+    // tint(this.Visibility);
+    tint(255, 126)
+  }
+    
+
   }
 
 }
-// }
