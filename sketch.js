@@ -38,7 +38,7 @@ function setup()
 
 
     // Creating blocks
-    bolck1 = new Blocks(510, 489, 40, 55);
+    bolck1 = new Blocks(510, 570, 40, 55);
     bolck2 = new Blocks(551, 489, 40, 55);
     bolck3 = new Blocks(592, 489, 40, 55);
     bolck4 = new Blocks(633, 489, 40, 55);
@@ -82,52 +82,58 @@ function setup()
 function draw()
 {
     background(153, 255, 255);
+    text("x"+mouseX+" "+ mouseY , 100, 105);
+    
     textSize(30);
     fill("black");
     text("Press Space to get a Second Chance", 100, 45);
-
+    
+    
     stand1.display();
     stand2.display();
     ground.display();
     polygon.display();
     rope.display();
-
+    
     bolck1.display(1, 1, 1);
     bolck2.display(1, 1, 1);
     bolck3.display(1, 1, 1);
     bolck4.display(1, 1, 1);
     bolck5.display(1, 1, 1);
-
+    
     bolck6.display(rgb(255, 0, 0));
     bolck7.display(rgb(255, 0, 0));
     bolck8.display(rgb(255, 0, 0));
     bolck9.display(rgb(255, 0, 0));
-
+    
     bolck10.display(rgb(0, 230, 0));
     bolck11.display(rgb(0, 230, 0));
     bolck12.display(rgb(0, 230, 0));
-
+    
     bolck13.display(rgb(26, 26, 255));
     bolck14.display(rgb(26, 26, 255));
-
+    
     bolck15.display(255);
-
+    
     // New one
     bolck16.display(rgb(153, 160, 225));
     bolck17.display(rgb(153, 160, 225));
     bolck18.display(rgb(153, 160, 225));
     bolck19.display(rgb(153, 160, 225));
-
+    
     
     bolck20.display(rgb(51, 51, 51));
     bolck21.display(rgb(51, 51, 51));
     bolck22.display(rgb(51, 51, 51));
-
+    
     bolck23.display(rgb(255, 204, 20));
     bolck24.display(rgb(255, 204, 20));
+    
 
     bolck25.display(rgb(210, 121, 255));
-
+    
+    
+    
     drawSprites(); 
 }
 
@@ -153,9 +159,12 @@ if(keyCode===32)
     rope.attach(polygon.body);
   }
 
-else if(keyCode===83)
+  else if(keyCode===83)
   {
+    //   stand1.setStatic(false);
       Matter.Body.setStatic(stand1.body, false);
       Matter.Body.setStatic(stand2.body, false);
   }
 }
+
+
