@@ -38,7 +38,7 @@ function setup()
 
 
     // Creating blocks
-    bolck1 = new Blocks(510, 570, 40, 55);
+    bolck1 = new Blocks(510, 489, 40, 55);
     bolck2 = new Blocks(551, 489, 40, 55);
     bolck3 = new Blocks(592, 489, 40, 55);
     bolck4 = new Blocks(633, 489, 40, 55);
