@@ -81,6 +81,7 @@ function setup()
 
 function draw()
 {
+    // background("black");
     background(153, 255, 255);
     text("x"+mouseX+" "+ mouseY , 100, 105);
     
