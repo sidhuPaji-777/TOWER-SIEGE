@@ -12,37 +12,41 @@ constructor(x, y, width, height) {
     this.height = height;
     World.add(world, this.body);
 
-    this.Visibility=255;
+    this.visibility=255;
   }
 
   display(rung){
+    var pos=this.body.position;
+    var colour = rung;
+    var angle = this.body.angle;
+
+    var BgC = rgb(153, 255, 255);
 
     if((this.body.speed)<4)
     {
-    var pos=this.body.position;
-    var colour = rung;
-    this.Visibility=this.Visibility-10;
+    // this.visibility=this.visibility-10;
+    push();
 
+    translate(0, 0);
+    rotate(angle);
     fill(colour);
     stroke("White");
     strokeWeight(0.5);
     rect(pos.x, pos.y, this.width, this.height);
     rectMode(CENTER);
-    push();
     
     pop();
-
   }
 
   else{
     
     World.remove(world,this.body);
-    console.log("done");
-    // this.Visibility=this.Visibility-0;
-    // tint(this.Visibility);
-    tint(255, 126)
+    push();
+    tint(255,this.visibility);
+    this.visibility=this.visibility-3;
+    pop();
   }
-    
+    // if(this.body.speed>3)
 
   }
 
